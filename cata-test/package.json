@@ -1,0 +1,12 @@
+{
+  "name": "catapanda",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CataPanda — personalized disaster-prep checklists, grounded in government sources, prioritized by AI.",
+  "scripts": {
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
+  }
+}

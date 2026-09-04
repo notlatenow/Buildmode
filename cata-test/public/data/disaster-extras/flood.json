@@ -1,0 +1,16 @@
+[
+  {
+    "id": "fl-burner",
+    "category": "Flood-Specific Additions",
+    "item": "Portable burner / camp stove",
+    "notes": "For cooking if utilities are cut during prolonged flooding.",
+    "sources": [
+      "KR"
+    ],
+    "priority": "important",
+    "purchaseCategories": [
+      "Hardware store",
+      "Online"
+    ]
+  }
+]

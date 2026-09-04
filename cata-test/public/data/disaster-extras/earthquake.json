@@ -1,0 +1,66 @@
+[
+  {
+    "id": "eq-rope",
+    "category": "Earthquake-Specific Additions",
+    "item": "Sturdy rope",
+    "notes": "Listed in the Philippines' named earthquake survival kit.",
+    "sources": [
+      "PH"
+    ],
+    "priority": "important",
+    "purchaseCategories": [
+      "Hardware store"
+    ]
+  },
+  {
+    "id": "eq-matches",
+    "category": "Earthquake-Specific Additions",
+    "item": "Water-resistant matches",
+    "notes": "Listed in the Philippines' named earthquake survival kit.",
+    "sources": [
+      "PH"
+    ],
+    "priority": "important",
+    "purchaseCategories": [
+      "Grocery store",
+      "Hardware store"
+    ]
+  },
+  {
+    "id": "eq-extinguisher",
+    "category": "Earthquake-Specific Additions",
+    "item": "Fire extinguisher",
+    "notes": "Keep one handy and learn how to use it.",
+    "sources": [
+      "KR"
+    ],
+    "priority": "essential",
+    "purchaseCategories": [
+      "Hardware store"
+    ]
+  },
+  {
+    "id": "eq-babywrap",
+    "category": "Earthquake-Specific Additions",
+    "item": "Baby wrap / carrier",
+    "notes": "A stroller is difficult to use over debris while evacuating with an infant.",
+    "sources": [
+      "KR"
+    ],
+    "priority": "conditional",
+    "purchaseCategories": [
+      "Baby/kids store"
+    ]
+  },
+  {
+    "id": "eq-headprotect",
+    "category": "Earthquake-Specific Additions",
+    "item": "Head/neck protection (cushion, folded clothing, or a thick book)",
+    "notes": "To shield your head and neck while taking cover.",
+    "sources": [
+      "KR"
+    ],
+    "priority": "important",
+    "purchaseCategories": []
+  }
+]

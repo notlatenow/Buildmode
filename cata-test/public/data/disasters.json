@@ -1,0 +1,39 @@
+[
+  {
+    "id": "earthquake",
+    "name": "Earthquake",
+    "tagline": "Ground shaking causing structural damage",
+    "extrasFile": "earthquake.json",
+    "behaviourNotes": [
+      "Taiwan's whole bag series is built around this scenario: keep the bag by the door so it can be grabbed immediately if a building is damaged and evacuation is required. [TW]",
+      "Put on sturdy shoes before moving around afterward - broken glass on the floor is a common injury source. [SG]",
+      "If trapped under debris, use a whistle, a torchlight, or tap on a pipe or wall to attract rescuers' attention. [SG]",
+      "Keep calm and douse any open flames immediately; take cover under sturdy furniture, away from glass. [HK]",
+      "After the shaking stops, check for a gas leak before using any flame - open windows, shut off the main valve, and report it. [HK]"
+    ]
+  },
+  {
+    "id": "flood",
+    "name": "Flood",
+    "tagline": "Rising water from storms, rivers, or coastal surge",
+    "extrasFile": "flood.json",
+    "behaviourNotes": [
+      "Move to higher ground. Stay put but grab your bag and be ready to evacuate the moment authorities advise it. [SG]",
+      "Don't walk through moving water higher than ankle height; if you must, use a stick to check the ground ahead of you. [SG]",
+      "In coastal or low-lying areas, a storm surge can flood the shoreline with little warning - move to high ground immediately. [HK]",
+      "Stock at least 3 days of food and water, and fill your bathtub in advance as a backup water supply. [KR]"
+    ]
+  },
+  {
+    "id": "typhoon",
+    "name": "Typhoon",
+    "tagline": "Tropical storms with high winds & flooding",
+    "extrasFile": "typhoon.json",
+    "behaviourNotes": [
+      "Keep a flashlight and first aid kit within reach - called out specifically for power outages and storm injuries. [SG]",
+      "Tune in to the radio for updates throughout the storm - don't step outside during a lull, winds can pick up again. [SG]",
+      "As the storm signal rises, finish preparations, stay indoors, lock windows and doors. [HK]",
+      "Lay in sandbags and waterproof flood gates, clear gutters, reinforce or bring in windows and loose outdoor objects. [TW]"
+    ]
+  }
+]

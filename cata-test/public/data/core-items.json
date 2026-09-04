@@ -1,0 +1,384 @@
+[
+  {
+    "id": "water-drinking",
+    "category": "Water & Food",
+    "item": "Drinking water",
+    "notes": "Taiwan: at least 15 mL per kg of body weight, per day. Brunei: 3 L per person, per day.",
+    "sources": [
+      "TW",
+      "HK",
+      "BN",
+      "PH",
+      "KR",
+      "ID"
+    ],
+    "priority": "essential",
+    "purchaseCategories": [
+      "Grocery store"
+    ]
+  },
+  {
+    "id": "food-nonperishable",
+    "category": "Water & Food",
+    "item": "Non-perishable / ready-to-eat food",
+    "notes": "Biscuits, chocolate, emergency food packs, vacuum-packed instant meals, candies.",
+    "sources": [
+      "TW",
+      "HK",
+      "BN",
+      "PH",
+      "KR",
+      "ID"
+    ],
+    "priority": "essential",
+    "purchaseCategories": [
+      "Grocery store"
+    ]
+  },
+  {
+    "id": "firstaid-kit",
+    "category": "First Aid & Medication",
+    "item": "First aid kit",
+    "notes": "Iodine, cotton swabs, gauze, pain-relief patches or ointment, thermometer.",
+    "sources": [
+      "TW",
+      "SG",
+      "HK",
+      "BN",
+      "PH",
+      "KR",
+      "ID"
+    ],
+    "priority": "essential",
+    "purchaseCategories": [
+      "Pharmacy"
+    ]
+  },
+  {
+    "id": "firstaid-medications",
+    "category": "First Aid & Medication",
+    "item": "Personal medications",
+    "notes": "Daily prescriptions and standby medication for chronic conditions (e.g. high blood pressure, asthma, diabetes). Note storage method and expiry dates.",
+    "sources": [
+      "TW",
+      "SG",
+      "BN",
+      "ID"
+    ],
+    "priority": "important",
+    "purchaseCategories": [
+      "Pharmacy"
+    ]
+  },
+  {
+    "id": "hygiene-masks",
+    "category": "Hygiene & Sanitation",
+    "item": "Face masks (N95 or surgical)",
+    "notes": "Protection from dust, debris and airborne pollutants.",
+    "sources": [
+      "TW",
+      "SG",
+      "BN",
+      "PH"
+    ],
+    "priority": "important",
+    "purchaseCategories": [
+      "Pharmacy",
+      "Grocery store"
+    ]
+  },
+  {
+    "id": "hygiene-sanitizer",
+    "category": "Hygiene & Sanitation",
+    "item": "Hand sanitiser, wet wipes, tissues",
+    "notes": "",
+    "sources": [
+      "TW",
+      "BN"
+    ],
+    "priority": "nice-to-have",
+    "purchaseCategories": [
+      "Grocery store",
+      "Pharmacy"
+    ]
+  },
+  {
+    "id": "hygiene-soap",
+    "category": "Hygiene & Sanitation",
+    "item": "Soap & personal hygiene items",
+    "notes": "Indonesia's BPBD DIY guide specifically names a toothbrush and toothpaste.",
+    "sources": [
+      "BN",
+      "ID"
+    ],
+    "priority": "nice-to-have",
+    "purchaseCategories": [
+      "Grocery store",
+      "Pharmacy"
+    ]
+  },
+  {
+    "id": "hygiene-sanitary",
+    "category": "Hygiene & Sanitation",
+    "item": "Sanitary pads / diapers",
+    "notes": "Panty liners; baby diapers if needed.",
+    "sources": [
+      "TW",
+      "BN"
+    ],
+    "priority": "nice-to-have",
+    "purchaseCategories": [
+      "Pharmacy",
+      "Baby/kids store"
+    ]
+  },
+  {
+    "id": "power-flashlight",
+    "category": "Light, Power & Communication",
+    "item": "Flashlight or headlamp",
+    "notes": "Store separately from its batteries to avoid leakage or corrosion.",
+    "sources": [
+      "TW",
+      "SG",
+      "HK",
+      "BN",
+      "PH",
+      "KR",
+      "ID"
+    ],
+    "priority": "essential",
+    "purchaseCategories": [
+      "Hardware store"
+    ]
+  },
+  {
+    "id": "power-batteries",
+    "category": "Light, Power & Communication",
+    "item": "Spare batteries",
+    "notes": "Pack extra; don't leave batteries fitted in devices while stored.",
+    "sources": [
+      "TW",
+      "SG",
+      "HK",
+      "BN",
+      "KR"
+    ],
+    "priority": "essential",
+    "purchaseCategories": [
+      "Hardware store",
+      "Grocery store"
+    ]
+  },
+  {
+    "id": "power-radio",
+    "category": "Light, Power & Communication",
+    "item": "Portable radio",
+    "notes": "Solar- or hand-crank-rechargeable preferred. Singapore's SCDF lists this as optional.",
+    "sources": [
+      "TW",
+      "HK",
+      "BN",
+      "PH",
+      "SG",
+      "KR"
+    ],
+    "priority": "essential",
+    "purchaseCategories": [
+      "Hardware store",
+      "Online"
+    ]
+  },
+  {
+    "id": "power-bank",
+    "category": "Light, Power & Communication",
+    "item": "Power bank & charging cable",
+    "notes": "Recharge it every 2-3 months so it stays usable. Singapore's SCDF lists this as optional.",
+    "sources": [
+      "TW",
+      "SG",
+      "KR",
+      "ID"
+    ],
+    "priority": "important",
+    "purchaseCategories": [
+      "Hardware store",
+      "Online"
+    ]
+  },
+  {
+    "id": "docs-id",
+    "category": "Documents & Money",
+    "item": "Copies of ID card & health/insurance card",
+    "notes": "Physical copies or digital copies on your phone. Singapore's SCDF specifically recommends a waterproof folder for the physical copies.",
+    "sources": [
+      "TW",
+      "BN",
+      "SG",
+      "ID"
+    ],
+    "priority": "important",
+    "purchaseCategories": []
+  },
+  {
+    "id": "docs-cash",
+    "category": "Documents & Money",
+    "item": "Small amount of cash",
+    "notes": "Small notes/coins, useful for pay phones or vending machines. Singapore's SCDF lists this as optional.",
+    "sources": [
+      "TW",
+      "SG"
+    ],
+    "priority": "nice-to-have",
+    "purchaseCategories": []
+  },
+  {
+    "id": "docs-phonelist",
+    "category": "Documents & Money",
+    "item": "List of essential phone numbers",
+    "notes": "Utility companies, insurer, an out-of-area contact. Taiwan's TFDP frames this as a family emergency contact card.",
+    "sources": [
+      "SG",
+      "TW"
+    ],
+    "priority": "nice-to-have",
+    "purchaseCategories": []
+  },
+  {
+    "id": "clothing-spare",
+    "category": "Clothing & Protection",
+    "item": "Spare clothing, incl. a raincoat",
+    "notes": "",
+    "sources": [
+      "TW",
+      "BN",
+      "SG",
+      "ID"
+    ],
+    "priority": "important",
+    "purchaseCategories": [
+      "Grocery store",
+      "Online"
+    ]
+  },
+  {
+    "id": "clothing-shoes",
+    "category": "Clothing & Protection",
+    "item": "Sturdy, closed-toe shoes",
+    "notes": "For walking over debris or broken glass during evacuation. South Korea's Safe Korea calls these out as \"thick indoor shoes.\"",
+    "sources": [
+      "TW",
+      "BN",
+      "KR"
+    ],
+    "priority": "important",
+    "purchaseCategories": [
+      "Online",
+      "Grocery store"
+    ]
+  },
+  {
+    "id": "clothing-gloves",
+    "category": "Clothing & Protection",
+    "item": "Gloves",
+    "notes": "Cut-resistant, durable.",
+    "sources": [
+      "TW",
+      "BN"
+    ],
+    "priority": "nice-to-have",
+    "purchaseCategories": [
+      "Hardware store"
+    ]
+  },
+  {
+    "id": "clothing-blanket",
+    "category": "Clothing & Protection",
+    "item": "Blanket (incl. thermal/emergency blanket)",
+    "notes": "",
+    "sources": [
+      "TW",
+      "PH",
+      "KR"
+    ],
+    "priority": "important",
+    "purchaseCategories": [
+      "Hardware store",
+      "Online"
+    ]
+  },
+  {
+    "id": "tools-whistle",
+    "category": "Tools",
+    "item": "Whistle",
+    "notes": "To call for help without shouting, which tires you and risks inhaling dust or smoke.",
+    "sources": [
+      "TW",
+      "SG",
+      "HK",
+      "PH",
+      "ID"
+    ],
+    "priority": "essential",
+    "purchaseCategories": [
+      "Hardware store",
+      "Online"
+    ]
+  },
+  {
+    "id": "tools-multitool",
+    "category": "Tools",
+    "item": "Multi-tool, small knife or scissors",
+    "notes": "",
+    "sources": [
+      "TW",
+      "BN"
+    ],
+    "priority": "nice-to-have",
+    "purchaseCategories": [
+      "Hardware store"
+    ]
+  },
+  {
+    "id": "household-infant",
+    "category": "Household & Special Needs",
+    "item": "Infant supplies",
+    "notes": "Formula, bottles, vacuum-packed/canned baby food, diapers, pacifiers, small toys.",
+    "sources": [
+      "TW",
+      "BN"
+    ],
+    "priority": "conditional",
+    "purchaseCategories": [
+      "Baby/kids store",
+      "Pharmacy"
+    ]
+  },
+  {
+    "id": "household-elderly",
+    "category": "Household & Special Needs",
+    "item": "Elderly-care items",
+    "notes": "Cane, dentures, hearing aids (+ batteries), reading glasses, adult diapers, easy-to-eat/senior-friendly food.",
+    "sources": [
+      "TW",
+      "BN"
+    ],
+    "priority": "conditional",
+    "purchaseCategories": [
+      "Pharmacy",
+      "Grocery store"
+    ]
+  },
+  {
+    "id": "household-pet",
+    "category": "Household & Special Needs",
+    "item": "Pet supplies",
+    "notes": "Pet food, regular medication, carrier, leash, warm blanket.",
+    "sources": [
+      "TW"
+    ],
+    "priority": "conditional",
+    "purchaseCategories": [
+      "Pet store"
+    ]
+  }
+]
