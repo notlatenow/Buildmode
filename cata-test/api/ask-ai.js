@@ -45,6 +45,14 @@ function loadDisasterCatalog(disasterIds) {
 
 const MODEL_NAME = process.env.GEMINI_MODEL || "gemini-flash-latest";
 const FALLBACK_MODEL_NAME = process.env.GEMINI_FALLBACK_MODEL || "gemini-flash-lite-latest";
+const PER_MODEL_TIMEOUT_MS = 18000; // must leave enough of vercel.json's maxDuration for both attempts
+
+function withTimeout(promise, ms, label) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms)),
+  ]);
+}
 
 /**
  * The one low-level function everything else calls through. Isolated here so
@@ -54,7 +62,9 @@ const FALLBACK_MODEL_NAME = process.env.GEMINI_FALLBACK_MODEL || "gemini-flash-l
  * Tries MODEL_NAME first, then FALLBACK_MODEL_NAME if the primary errors out
  * (quota, transient unavailability) or its response fails `validate` - a
  * single model going down or exhausting quota shouldn't take out the whole
- * personalization feature.
+ * personalization feature. Each attempt is capped at PER_MODEL_TIMEOUT_MS so
+ * a hanging primary call can't eat the whole function budget and starve the
+ * fallback of any chance to run.
  */
 async function askAI({ prompt, responseSchema, validate }) {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -71,7 +81,7 @@ async function askAI({ prompt, responseSchema, validate }) {
           ...(responseSchema ? { responseSchema } : {}),
         },
       });
-      const result = await model.generateContent(prompt);
+      const result = await withTimeout(model.generateContent(prompt), PER_MODEL_TIMEOUT_MS, modelName);
       const parsed = JSON.parse(result.response.text()); // throws on malformed JSON -> caught below, tries next model
       if (validate && !validate(parsed)) {
         throw new Error(`${modelName} response failed validation`);
