@@ -43,29 +43,46 @@ function loadDisasterCatalog(disasterIds) {
   return items;
 }
 
-const MODEL_NAME = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+const MODEL_NAME = process.env.GEMINI_MODEL || "gemini-flash-latest";
+const FALLBACK_MODEL_NAME = process.env.GEMINI_FALLBACK_MODEL || "gemini-flash-lite-latest";
 
 /**
  * The one low-level function everything else calls through. Isolated here so
  * swapping providers later is a change in this function only (see hack-notes
  * screenshot on OpenAI-compatible endpoints for the free-tier providers).
+ *
+ * Tries MODEL_NAME first, then FALLBACK_MODEL_NAME if the primary errors out
+ * (quota, transient unavailability) or its response fails `validate` - a
+ * single model going down or exhausting quota shouldn't take out the whole
+ * personalization feature.
  */
-async function askAI({ prompt, responseSchema }) {
+async function askAI({ prompt, responseSchema, validate }) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error("GEMINI_API_KEY is not set");
 
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({
-    model: MODEL_NAME,
-    generationConfig: {
-      responseMimeType: "application/json",
-      ...(responseSchema ? { responseSchema } : {}),
-    },
-  });
-
-  const result = await model.generateContent(prompt);
-  const text = result.response.text();
-  return JSON.parse(text); // throws on malformed JSON -> caught by caller, triggers fallback
+  let lastError;
+  for (const modelName of [MODEL_NAME, FALLBACK_MODEL_NAME]) {
+    try {
+      const model = genAI.getGenerativeModel({
+        model: modelName,
+        generationConfig: {
+          responseMimeType: "application/json",
+          ...(responseSchema ? { responseSchema } : {}),
+        },
+      });
+      const result = await model.generateContent(prompt);
+      const parsed = JSON.parse(result.response.text()); // throws on malformed JSON -> caught below, tries next model
+      if (validate && !validate(parsed)) {
+        throw new Error(`${modelName} response failed validation`);
+      }
+      return parsed;
+    } catch (err) {
+      console.warn(`askAI: ${modelName} failed (${err.message})`);
+      lastError = err;
+    }
+  }
+  throw lastError;
 }
 
 const INTAKE_SCHEMA = {
@@ -136,8 +153,7 @@ module.exports = async (req, res) => {
       const prompt = `You are helping parse a free-text household description into structured
 fields for a disaster-preparedness app. Only extract what is stated or clearly implied -
 never guess. Household description: """${freeText || ""}"""`;
-      const parsed = await askAI({ prompt, responseSchema: INTAKE_SCHEMA });
-      if (!validateIntake(parsed)) throw new Error("intake response failed validation");
+      const parsed = await askAI({ prompt, responseSchema: INTAKE_SCHEMA, validate: validateIntake });
       res.status(200).json({ ok: true, result: parsed });
       return;
     }
@@ -156,8 +172,11 @@ never invent a new item or id). Household profile: ${JSON.stringify(profile || {
 CATALOG: ${JSON.stringify(catalogForPrompt)}
 Return the 10 most important item ids for THIS household, each with a one-sentence reason
 tied to their specific profile (e.g. an infant or a mobility issue changes what matters most).`;
-      const parsed = await askAI({ prompt, responseSchema: PRIORITIZE_SCHEMA });
-      if (!validatePrioritize(parsed, validIds)) throw new Error("prioritize response failed validation");
+      const parsed = await askAI({
+        prompt,
+        responseSchema: PRIORITIZE_SCHEMA,
+        validate: (obj) => validatePrioritize(obj, validIds),
+      });
       res.status(200).json({ ok: true, result: parsed });
       return;
     }
