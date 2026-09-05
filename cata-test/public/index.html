@@ -26,39 +26,45 @@
 
   <main class="wrap">
     <!-- Step 2: overlap / start-here view, shown when 2+ selected -->
-    <section id="step-overlap" class="card" hidden>
-      <h2>Start here <span id="overlap-pct" class="badge"></span></h2>
-      <p class="muted">These items cover every disaster type you picked — get them first.</p>
-      <ul id="overlap-list" class="checklist"></ul>
+    <section id="step-overlap" class="layered-card" hidden>
+      <div class="layered-card-inner">
+        <h2>Start here <span id="overlap-pct" class="badge"></span></h2>
+        <p class="muted">These items cover every disaster type you picked — get them first.</p>
+        <ul id="overlap-list" class="checklist"></ul>
+      </div>
     </section>
 
     <!-- Step 3: personalize -->
-    <section id="step-personalize" class="card" hidden>
-      <h2>Tell us about your household</h2>
-      <p class="muted">Optional — a useful checklist works with zero personalization. Describe your household in your own words (e.g. "I live with my elderly mother who uses a walker, we have a cat, and we're on the 4th floor").</p>
-      <textarea id="household-text" rows="3" placeholder="Optional — describe your household..."></textarea>
-      <button id="personalize-btn" class="btn-primary">Personalize my checklist</button>
-      <p id="personalize-status" class="muted" aria-live="polite"></p>
+    <section id="step-personalize" class="layered-card" hidden>
+      <div class="layered-card-inner">
+        <h2>Tell us about your household</h2>
+        <textarea id="household-text" rows="3" placeholder="Describe your household (ex: I live in a basement apt with my partner, my elderly mother who uses a walker, and we have a cat...)"></textarea>
+        <button id="personalize-btn" class="btn-primary">Personalize my checklist</button>
+        <p id="personalize-status" class="muted" aria-live="polite"></p>
+      </div>
     </section>
 
     <!-- Step 4: the checklist itself -->
-    <section id="step-checklist" class="card" hidden>
-      <div class="checklist-header">
-        <h2 id="checklist-title">Checklist</h2>
-        <span id="ai-badge" class="badge badge-muted" hidden>AI-personalized</span>
-      </div>
+    <section id="step-checklist" class="layered-card" hidden>
+      <div class="layered-card-inner">
+        <div class="checklist-header">
+          <h2 id="checklist-title">Checklist</h2>
+          <span id="ai-badge" class="badge badge-muted" hidden>AI-personalized</span>
+        </div>
 
-      <div id="top-ten" class="callout">
-        <h3>Top 10 for your household</h3>
-        <ol id="top-ten-list" class="checklist"></ol>
-      </div>
+        <div id="top-ten" class="callout">
+          <h3>Top 10 for your household</h3>
+          <ol id="top-ten-list" class="checklist"></ol>
+        </div>
 
-      <div id="categories"></div>
+        <div id="categories"></div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
+    <div class="wrap footer-content">
+      <img src="web-mascots.png" alt="CataPanda mascots" class="footer-mascots" />
       <p>Every item here is traceable to a government or civil-defense source — see
         <a href="./data/schema.md">data/schema.md</a> for the source index. Nothing shown is
         AI-invented; the AI layer only personalizes and prioritizes what's already vetted.</p>
