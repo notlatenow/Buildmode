@@ -11,6 +11,7 @@ const state = {
   profile: {},          // { infant, elderly, pet, mobilityIssue, medicalDevice }
   checked: loadChecked(),
   aiTopTen: null,       // set when AI personalization succeeds
+  checklistVisible: false, // gated behind "Show my checklist" / personalizing
 };
 
 function loadChecked() {
@@ -45,6 +46,7 @@ async function init() {
 
   renderDisasterOptions();
   document.getElementById("personalize-btn").addEventListener("click", onPersonalize);
+  document.getElementById("show-checklist-btn").addEventListener("click", onShowChecklist);
 }
 
 function renderDisasterOptions() {
@@ -68,6 +70,14 @@ function toggleDisaster(id, btn) {
     state.selected.add(id);
     btn.classList.add("selected");
   }
+  // Changing which disasters are picked invalidates whatever checklist was
+  // showing — require a fresh "Show my checklist" (or Personalize) click.
+  state.checklistVisible = false;
+  render();
+}
+
+function onShowChecklist() {
+  state.checklistVisible = true;
   render();
 }
 
@@ -99,6 +109,13 @@ function render() {
   }
 
   personalizeSection.hidden = false;
+
+  if (!state.checklistVisible) {
+    overlapSection.hidden = true;
+    checklistSection.hidden = true;
+    return;
+  }
+
   checklistSection.hidden = false;
 
   if (state.selected.size >= 2) {
@@ -246,6 +263,7 @@ async function onPersonalize() {
     state.aiTopTen = null;
     status.textContent = "Showing the standard prioritized list (personalization service unavailable right now).";
   }
+  state.checklistVisible = true;
   render();
 }
 

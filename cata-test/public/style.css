@@ -138,6 +138,9 @@ body {
 #step-personalize .muted {
   color: var(--panda-black);
 }
+#step-personalize h2 {
+  color: var(--panda-black);
+}
 
 @media (max-width: 720px) {
   .hero-card { flex: 1 1 auto; max-width: none; margin-left: 0; margin-top: 100px; }
@@ -249,6 +252,26 @@ textarea {
   font-size: 0.95rem;
 }
 .btn-primary:hover { background: #6b1613; }
+
+.personalize-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  margin-top: 10px;
+  background: #B6423C;
+  color: #6b1613;
+  border: 2px solid #6b1613;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.btn-secondary:hover { background: #6b1613; border-color: #6b1613; color: var(--panda-white); }
 
 .category { margin-top: 18px; }
 
