@@ -8,23 +8,23 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true">🐼</span>
-        <span class="brand-name">CataPanda</span>
-      </div>
-      <p class="tagline">Turn uncertainty into clear next steps.</p>
-    </div>
+    <img src="web-logo.png" alt="Catastrophic Pandamonium" class="hero-logo" />
   </header>
 
-  <main class="wrap">
-    <!-- Step 1: pick disaster type(s) -->
-    <section id="step-select" class="card">
-      <h1>What are you preparing for?</h1>
-      <p class="muted">Pick one to see its checklist, or two+ to see what overlaps.</p>
-      <div id="disaster-options" class="disaster-grid"></div>
-    </section>
+  <div class="hero">
+    <img src="web-mascots.png" alt="CataPanda mascots" class="hero-mascots" />
 
+    <!-- Step 1: pick disaster type(s) -->
+    <section id="step-select" class="hero-card">
+      <div class="hero-card-inner">
+        <h1>What are you preparing for?</h1>
+        <p class="muted">Pick one to see its checklist, or two+ to see what overlaps.</p>
+        <div id="disaster-options" class="disaster-grid"></div>
+      </div>
+    </section>
+  </div>
+
+  <main class="wrap">
     <!-- Step 2: overlap / start-here view, shown when 2+ selected -->
     <section id="step-overlap" class="card" hidden>
       <h2>Start here <span id="overlap-pct" class="badge"></span></h2>
