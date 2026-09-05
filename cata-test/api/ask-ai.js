@@ -152,6 +152,13 @@ module.exports = async (req, res) => {
     return;
   }
 
+  // Kill switch: flip to false to re-enable AI calls (e.g. before demo day).
+  const AI_CALLS_DISABLED = true;
+  if (AI_CALLS_DISABLED) {
+    res.status(200).json({ ok: false, error: "AI personalization is temporarily disabled" });
+    return;
+  }
+
   const { task, freeText, disasterIds, profile } = req.body || {};
   let { checklist } = req.body || {};
   if (!checklist && Array.isArray(disasterIds)) {
